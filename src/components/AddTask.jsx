@@ -15,6 +15,7 @@ const AddTask = ({ taskList, setTaskList, SingleTask, setSingleTask }) => {
           : todo
       );
       setTaskList(updatedTask);
+      setSingleTask({});
     } else {
       const date = new Date();
       const newTask = {
@@ -23,7 +24,7 @@ const AddTask = ({ taskList, setTaskList, SingleTask, setSingleTask }) => {
         time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`,
       };
       setTaskList([...taskList, newTask]);
-      e.target.task.value = "";
+      setSingleTask({});
     }
   };
   return (
@@ -35,7 +36,7 @@ const AddTask = ({ taskList, setTaskList, SingleTask, setSingleTask }) => {
         type="text"
         name="task"
         onChange={(e) => setSingleTask({ ...SingleTask, name: e.target.value })}
-        value={SingleTask.name}
+        value={SingleTask.name || " "}
         className="bg-blue-500 w-96 rounded-lg placeholder-white text-white p-2 "
         placeholder="add task"
       />
@@ -43,7 +44,7 @@ const AddTask = ({ taskList, setTaskList, SingleTask, setSingleTask }) => {
         className="bg-green-600 p-2 px-4 text-white border rounded-2xl"
         type="submit"
       >
-        Add
+        {SingleTask.id ? "Update" : "Add"}
       </button>
     </form>
   );

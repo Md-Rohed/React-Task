@@ -12,19 +12,19 @@ const ShowTask = ({ taskList, setTaskList, SingleTask, setSingleTask }) => {
     console.log(SingleTask);
   };
   return (
-    <div className="m-16 bg-slate-300 rounded-2xl h-96 ">
-      <div className="flex justify-between  ml-60  p-10">
+    <div className="m-16 bg-slate-300 rounded-2xl h-full   ">
+      <div className="flex justify-between  ml-60  p-10 ">
         <span className="font-bold text-2xl "> Todo</span>
         <button
           onClick={() => {
             setTaskList([]);
           }}
-          className="bg-blue-600 text-white p-2  mr-60"
+          className="bg-blue-600 text-white p-2  mr-60 rounded-xl"
         >
           Clear All
         </button>
       </div>
-      <ul className="flex justify-between  mx-48">
+      <ul className="flex flex-wrap gap-4 justify-between   mx-48 ">
         {taskList.map((task) => (
           <li
             key={task.id}
