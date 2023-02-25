@@ -37,7 +37,7 @@ const AddTask = ({ taskList, setTaskList, SingleTask, setSingleTask }) => {
         name="task"
         onChange={(e) => setSingleTask({ ...SingleTask, name: e.target.value })}
         value={SingleTask.name || " "}
-        className="bg-blue-500 w-96 rounded-lg placeholder-white text-white p-2 "
+        className="bg-blue-500 w-96 rounded-lg placeholder-white text-white p-2  sm:w-48 sm:mx-6"
         placeholder="add task"
       />
       <button

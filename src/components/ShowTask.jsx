@@ -13,7 +13,7 @@ const ShowTask = ({ taskList, setTaskList, SingleTask, setSingleTask }) => {
   };
   return (
     <div className="m-16 bg-slate-300 rounded-2xl h-full   ">
-      <div className="flex justify-between  ml-60  p-10 ">
+      <div className="flex justify-between  ml-60  p-10   ">
         <span className="font-bold text-2xl "> Todo</span>
         <button
           onClick={() => {
